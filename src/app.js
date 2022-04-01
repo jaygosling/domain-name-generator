@@ -29,10 +29,22 @@ let domain = [
 ];
 let button = document.querySelector("#genButton");
 let domainName = document.querySelector("#domName");
+let allofthem = "";
 button.addEventListener("click", function() {
-  let art = article[Math.floor(Math.random() * 5)];
-  let adj = adjective[Math.floor(Math.random() * 10)];
-  let nouns = noun[Math.floor(Math.random() * 5)];
-  let dom = domain[Math.floor(Math.random() * 10)];
-  domainName.innerHTML = art + adj + nouns + dom;
+  for (let x in article) {
+    for (let y in adjective) {
+      for (let z in noun) {
+        for (let a in domain) {
+          allofthem =
+            allofthem +
+            article[x] +
+            adjective[y] +
+            noun[z] +
+            domain[a] +
+            "</br>";
+        }
+      }
+    }
+  }
+  domainName.innerHTML = allofthem;
 });
